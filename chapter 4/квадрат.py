@@ -1,0 +1,8 @@
+print(" " * 4, "VVVVVVVVVVVVVVV")
+print(" " * 4, "V", "           " * 1, "V")
+print(" " * 4, "V", "           " * 1, "V")
+print(" " * 4, "V", "           " * 1, "V")
+print(" " * 4, "V", "           " * 1, "V")
+print(" " * 4, "V", "           " * 1, "V")
+print(" " * 4, "V", "           " * 1, "V")
+print(" " * 4, "VVVVVVVVVVVVVVV")
