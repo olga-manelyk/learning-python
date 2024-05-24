@@ -61,3 +61,16 @@ def get_all_pokemons():
     with open(full_info_filename, "w") as f:
         f.write(json.dumps(pokemons_info, sort_keys=True, indent=4))
     return [Pokemon(**pokemon) for pokemon in pokemons_info]
+
+
+poks = get_all_pokemons()
+result = {}
+
+for pok in poks:
+    name_length = len(pok.name)
+
+    if name_length in result:
+        result[name_length] = result[name_length] + 1
+    else:
+        result[name_length] = 1
+print(result)
