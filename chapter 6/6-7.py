@@ -1,11 +1,12 @@
-people = [
-    {"name": "anna", "surname": "smirnova", "age": "5", "city": "ostrog"},
-    {"name": "denus", "surname": "smirnova", "age": "5", "city": "italy"},
+called pets = [
+    {"name": "boba", "breed": "rottweiler", "age": "12", "city": "ostrog"},
+    {"name": "denus", "surname": "sokil", "age": "88", "city": "italy"},
     {"name": "elena", "surname": "smirnova", "age": "38", "city": "turkey"},
 ]
-for human in people:
-    print(
-        f"name-{human['name'].title()} "
-        f"surname-{human['surname'].title()} "
-        f"age-{human['age']} "
-    )
+
+for person in people:
+    name = f"{person['name'].title()} {person['surname'].title()}"
+    age = person["age"]
+    city = person["city"].title()
+
+    print(f"{name}, of {city}, is {age} years old.")

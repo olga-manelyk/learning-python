@@ -1,16 +1,22 @@
 from flask import Flask
+from .game import get_all_pokemons
 
+poks = get_all_pokemons()
+pok_t = """<tr>
+     <td>{pok.name}</td>
+          <td>{pok.weight}</td>
+          <td><img src="{pok.picture}" class="img-thumbnail"></td>
+        </tr>"""
 app = Flask(__name__)
+f = open("from_illia/table.html", "r")
+template = f.read()
+f.close()
 
 
 @app.route("/")
 def hello_world():
-    return """
-    <a href="http://127.0.0.1:5000/olga">Greet Olga</a>
+    rendered = []
+    for pok in poks[:100]:
+        rendered.append(pok_t.format(pok=pok))
 
-    <p>Hello, <b>World</b>!</p>"""
-
-
-@app.route("/olga")
-def hello_olga():
-    return "<p>Hello, olga!</p>"
+    return template.format("".join(rendered))
